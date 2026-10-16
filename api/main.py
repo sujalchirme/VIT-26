@@ -46,7 +46,8 @@ def predict(request: PredictionRequest) -> dict[str, object]:
     latest = result.sort_values("timestamp").groupby("sensor_id", as_index=False).tail(1)
     public_fields = ["timestamp", "run_id", "sensor_id", "group_id", "value", "predicted_fault_type",
                      "environment_abnormal", "fault_evidence", "event_consensus", "peer_count",
-                     "trust_score", "maintenance_recommendation", "alarm_decision", "explanation"]
+                     "top_contributing_features", "peer_agreement", "trust_score",
+                     "maintenance_recommendation", "alarm_decision", "explanation"]
     latest = latest[public_fields].copy()
     latest["timestamp"] = latest["timestamp"].astype(str)
     alarms = latest[latest["alarm_decision"] != "NO_ALARM"]

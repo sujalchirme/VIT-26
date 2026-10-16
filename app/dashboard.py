@@ -101,13 +101,16 @@ def main() -> None:
         st.plotly_chart(gauge, use_container_width=True)
         st.subheader(str(current["alarm_decision"]).replace("_", " ").title())
         st.write(current["explanation"])
+        st.write("**Top evidence:** " + ", ".join(current["top_contributing_features"]))
+        if current["peer_agreement"]:
+            st.write("**Peer agreement:** " + current["peer_agreement"])
         st.write(f"**Health action:** {current['maintenance_recommendation']}")
         if current["peer_count"] == 0:
             st.info("No peer sensors are available. The decision uses this sensor's history only.")
 
     st.subheader("Current sensor status")
     status_columns = ["sensor_id", "group_id", "value", "predicted_fault_type", "trust_score",
-                      "maintenance_recommendation", "alarm_decision", "explanation"]
+                      "maintenance_recommendation", "alarm_decision", "peer_agreement", "explanation"]
     st.dataframe(latest[status_columns].sort_values("sensor_id"), use_container_width=True, hide_index=True)
 
     st.subheader("Recent alarm feed")

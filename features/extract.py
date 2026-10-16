@@ -5,6 +5,8 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
+from models.config import load_config
+
 
 REQUIRED_COLUMNS = {"timestamp", "run_id", "sensor_id", "group_id", "value"}
 
@@ -40,7 +42,7 @@ def _one_sensor_features(sensor: pd.DataFrame) -> pd.DataFrame:
     return out.reset_index()
 
 
-def extract_features(readings: pd.DataFrame, consensus_z: float = 3.0) -> pd.DataFrame:
+def extract_features(readings: pd.DataFrame, consensus_z: float | None = None) -> pd.DataFrame:
     """Add rolling self-health and peer-consensus features to long-form readings.
 
     The input may contain missing sensor rows and irregular timestamps. Time-based
@@ -49,6 +51,8 @@ def extract_features(readings: pd.DataFrame, consensus_z: float = 3.0) -> pd.Dat
     missing = REQUIRED_COLUMNS - set(readings.columns)
     if missing:
         raise ValueError(f"Missing required input columns: {', '.join(sorted(missing))}")
+    if consensus_z is None:
+        consensus_z = float(load_config()["detection"]["peer_deviation_z"])
     if consensus_z <= 0:
         raise ValueError("consensus_z must be positive")
 

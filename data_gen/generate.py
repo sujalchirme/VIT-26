@@ -25,8 +25,8 @@ class Scenario:
 
 
 PUBLIC_SCENARIOS = (
-    Scenario("public_basic", ("offset_drift", "spike", "stuck_at"), ("step", "pulse")),
-    Scenario("public_noise_gain", ("noise_increase", "gain_error"), ("ramp", "propagating")),
+    Scenario("public_basic", ("offset_drift", "spike", "stuck_at", "dropout"), ("step", "pulse")),
+    Scenario("public_noise_gain_degradation", ("noise_increase", "gain_error", "slow_degradation"), ("ramp", "propagating")),
 )
 
 HIDDEN_SCENARIOS = (

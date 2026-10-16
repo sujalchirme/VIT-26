@@ -2,6 +2,7 @@ fastapi>=0.110
 numpy>=1.26
 pandas>=2.1
 plotly>=5.18
+PyYAML>=6.0
 scikit-learn>=1.4
 streamlit>=1.32
 uvicorn[standard]>=0.27

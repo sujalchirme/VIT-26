@@ -19,6 +19,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from features.extract import extract_features
+from models.config import load_config
 from models.schema import FEATURE_COLUMNS
 
 MODEL_VERSION = 1
@@ -69,7 +70,8 @@ def train(train_path: Path, output_path: Path, validation_path: Path | None = No
         n_estimators=160, contamination="auto", random_state=seed, n_jobs=-1,
     )
     isolation_forest.fit(x_clean)
-    isolation_threshold = float(np.quantile(isolation_forest.decision_function(x_clean), 0.01))
+    normal_quantile = float(load_config()["isolation_forest"]["training_normal_quantile"])
+    isolation_threshold = float(np.quantile(isolation_forest.decision_function(x_clean), normal_quantile))
 
     bundle = {
         "version": MODEL_VERSION,
@@ -78,6 +80,7 @@ def train(train_path: Path, output_path: Path, validation_path: Path | None = No
         "isolation_imputer": imputer,
         "isolation_forest": isolation_forest,
         "isolation_threshold": isolation_threshold,
+        "isolation_training_quantile": normal_quantile,
         "classes": classifier.named_steps["random_forest"].classes_.tolist(),
         "training_rows": int(len(sampled)),
         "clean_rows_for_isolation_forest": int(len(clean)),

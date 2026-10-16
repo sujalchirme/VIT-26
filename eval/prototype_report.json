@@ -3,10 +3,10 @@
   "model_mode": "learned_plus_rules",
   "rows": 230400,
   "fault_detection": {
-    "precision": 0.5585516178736518,
-    "recall": 0.8937376725838264,
-    "f1": 0.6874644414944054,
-    "fault_type_macro_f1": 0.6284392397281644,
+    "precision": 0.5610687022900763,
+    "recall": 0.9060650887573964,
+    "f1": 0.6930039600226287,
+    "fault_type_macro_f1": 0.6884585536588386,
     "fault_type_labels": [
       "none",
       "offset_drift",
@@ -19,19 +19,19 @@
     ],
     "confusion_matrix_rows_true_columns_predicted": [
       [
-        223479,
-        83,
-        0,
-        130,
-        51,
-        75,
-        230,
-        0
-      ],
-      [
-        59,
+        223469,
+        65,
         13,
-        0,
+        83,
+        60,
+        59,
+        254,
+        40
+      ],
+      [
+        58,
+        12,
+        4,
         0,
         0,
         0,
@@ -39,146 +39,146 @@
         0
       ],
       [
-        234,
-        54,
-        478,
-        8,
+        213,
+        49,
+        477,
         0,
-        5,
         0,
-        0
+        0,
+        0,
+        14
       ],
       [
         0,
         0,
-        3,
-        21,
+        9,
+        14,
         0,
-        0,
-        0,
-        0
-      ],
-      [
-        23,
-        0,
-        0,
-        0,
-        841,
-        0,
-        0,
-        0
-      ],
-      [
-        19,
-        3,
-        0,
-        5,
-        0,
-        1123,
-        0,
-        0
-      ],
-      [
-        50,
-        0,
-        0,
-        0,
-        0,
-        0,
-        670,
-        0
-      ],
-      [
-        46,
         1,
         0,
+        0
+      ],
+      [
+        27,
         0,
         0,
-        236,
+        0,
+        837,
+        0,
         0,
         0
+      ],
+      [
+        38,
+        0,
+        0,
+        3,
+        0,
+        735,
+        0,
+        370
+      ],
+      [
+        28,
+        0,
+        0,
+        0,
+        0,
+        0,
+        692,
+        0
+      ],
+      [
+        17,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        269
       ]
     ],
     "classification_report": {
       "none": {
-        "precision": 0.9980751194676433,
-        "recall": 0.987342275474499,
-        "f1-score": 0.9926796874652973,
+        "precision": 0.9982979673888764,
+        "recall": 0.987298094935143,
+        "f1-score": 0.9927675624286418,
         "support": 226344.0
       },
       "offset_drift": {
-        "precision": 0.08441558441558442,
-        "recall": 0.09027777777777778,
-        "f1-score": 0.087248322147651,
+        "precision": 0.09523809523809523,
+        "recall": 0.08333333333333333,
+        "f1-score": 0.08888888888888889,
         "support": 144.0
       },
       "gain_error": {
-        "precision": 0.9937629937629938,
-        "recall": 0.5532407407407407,
-        "f1-score": 0.7107806691449814,
+        "precision": 0.94831013916501,
+        "recall": 0.5520833333333334,
+        "f1-score": 0.6978785662033651,
         "support": 864.0
       },
       "spike": {
-        "precision": 0.12804878048780488,
-        "recall": 0.875,
-        "f1-score": 0.22340425531914893,
+        "precision": 0.14,
+        "recall": 0.5833333333333334,
+        "f1-score": 0.22580645161290322,
         "support": 24.0
       },
       "stuck_at": {
-        "precision": 0.9428251121076233,
-        "recall": 0.9733796296296297,
-        "f1-score": 0.9578587699316629,
+        "precision": 0.9331103678929766,
+        "recall": 0.96875,
+        "f1-score": 0.9505962521294719,
         "support": 864.0
       },
       "noise_increase": {
-        "precision": 0.7804030576789437,
-        "recall": 0.9748263888888888,
-        "f1-score": 0.8668467773060594,
+        "precision": 0.9245283018867925,
+        "recall": 0.6380208333333334,
+        "f1-score": 0.7550077041602465,
         "support": 1152.0
       },
       "dropout": {
-        "precision": 0.7444444444444445,
-        "recall": 0.9305555555555556,
-        "f1-score": 0.8271604938271605,
+        "precision": 0.7315010570824524,
+        "recall": 0.9611111111111111,
+        "f1-score": 0.8307322929171669,
         "support": 720.0
       },
       "slow_degradation": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
+        "precision": 0.38816738816738816,
+        "recall": 0.9340277777777778,
+        "f1-score": 0.5484199796126402,
         "support": 288.0
       },
       "micro avg": {
-        "precision": 0.9942309379661315,
-        "recall": 0.9836154513888888,
-        "f1-score": 0.9888947069860802,
+        "precision": 0.9938352858584529,
+        "recall": 0.9830946180555555,
+        "f1-score": 0.9884357749121774,
         "support": 230400.0
       },
       "macro avg": {
-        "precision": 0.5839968865456298,
-        "recall": 0.6730777960083865,
-        "f1-score": 0.5832473718927451,
+        "precision": 0.6448941646026989,
+        "recall": 0.7134947271446708,
+        "f1-score": 0.6362622122441656,
         "support": 230400.0
       },
       "weighted avg": {
-        "precision": 0.9940615464478739,
-        "recall": 0.9836154513888888,
-        "f1-score": 0.9884586986047593,
+        "precision": 0.9952469891803186,
+        "recall": 0.9830946180555555,
+        "f1-score": 0.9886081763387508,
         "support": 230400.0
       }
     }
   },
   "false_alarm_reduction_vs_naive": {
     "naive_non_event_alarms": 5579,
-    "trusted_non_event_alarms": 1589,
-    "reduction_fraction": 0.7151819322459222
+    "trusted_non_event_alarms": 1574,
+    "reduction_fraction": 0.717870586126546
   },
   "event_sensitivity": 1.0,
   "genuine_events": 8,
-  "mean_fault_detection_delay_samples": 2.4,
+  "mean_fault_detection_delay_samples": 1.96,
   "trust_score_mean": {
-    "faulty_samples": 17.996314102564085,
-    "healthy_samples": 94.84071523875164
+    "faulty_samples": 16.994033530571983,
+    "healthy_samples": 94.8412800869473
   },
   "interpretation": "Descriptive simulation metrics; no models are fitted on this split."
 }
