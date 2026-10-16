@@ -1,0 +1,25 @@
+detection:
+  peer_deviation_z: 3.0
+  spike_jump: 4.0
+  stuck_repeats_15m: 5
+  dropout_ratio_60m: 0.05
+  drift_slope_60m: 0.025
+  slow_degradation_slope_60m: 0.012
+  slow_degradation_std_15m: 0.35
+  noise_std_15m: 0.9
+  environment_self_z: 2.5
+  environment_group_z: 4.0
+  event_consensus: 0.5
+  fault_classifier_probability: 0.65
+
+trust:
+  initial: 100.0
+  fault_decay_per_sample: 2.0
+  normal_recovery_per_sample: 0.15
+  replace_below: 40
+  inspect_below: 60
+  recalibrate_below: 80
+  ok_at_or_above: 95
+
+isolation_forest:
+  training_normal_quantile: 0.01
