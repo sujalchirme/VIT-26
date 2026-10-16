@@ -72,6 +72,8 @@ python -m streamlit run app/dashboard.py
 
 Open the local URL printed in the terminal (usually `http://localhost:8501`). Keep the terminal open while using the dashboard; press Ctrl+C to stop it. The dashboard includes a replay slider, sensor-to-group comparison, trust gauge, explanation, maintenance status, and selectable fault-injection scenarios.
 
+For a Windows presentation computer, double-click `setup_windows.bat` once while connected to the internet. After setup completes, double-click `run_demo.bat` each time you want to launch the dashboard. A terminal window opens and Streamlit opens the browser; keep the terminal open during the presentation and press Ctrl+C in it to stop the app.
+
 To enable learned model scores on that computer, generate its data and train its own model:
 
 ```bash
